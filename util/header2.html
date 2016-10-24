@@ -1,11 +1,27 @@
-	<header class="menu" style="position: absolute;">
-		<!-- <img src="img/logo.png" class="logo" style="position: absolute;"/> -->
-		<div class="main display-flex">
-			<i style="flex: 10 0 auto;">&nbsp;</i>
-			<a href="/" class="main-menu flex1">首页</a>
-			<a href="experience.html" class="main-menu flex1">体验</a>
-			<a href="cooperation.html" class="main-menu flex1">特许经营</a>
-			<a href="content.html" class="main-menu flex1">联系</a>
-			<i style="flex: 2 0 auto;">&nbsp;</i>
-		</div>
-	</header>
+<header class="menu" style="position: absolute;">
+	<!-- <img src="img/logo.png" class="logo" style="position: absolute;"/> -->
+	<div class="main display-flex">
+		<i style="flex: 10 0 auto;">&nbsp;</i>
+		<a id="id10" href="/" class="main-menu flex1">首页</a>
+		<a id="id11" href="experience.html" class="main-menu flex1">体验</a>
+		<a id="id12" href="cooperation.html" class="main-menu flex1">特许经营</a>
+		<a id="id13" href="content.html" class="main-menu flex1">联系</a>
+		<i style="flex: 2 0 auto;">&nbsp;</i>
+	</div>
+</header>
+<script>
+$(function() {
+    var pathname = location.pathname;
+    if (pathname.indexOf("index") > -1) {
+        $("#id10").css("color", "rgb(245,209,144)");
+    } else if (pathname.indexOf("8888") > -1) {
+        $("#id10").css("color", "rgb(245,209,144)");
+    } else if (pathname.indexOf("experience") > -1) {
+        $("#id11").css("color", "rgb(245,209,144)");
+    } else if (pathname.indexOf("cooperation") > -1) {
+        $("#id12").css("color", "rgb(245,209,144)");
+    } else if (pathname.indexOf("content") > -1) {
+        $("#id13").css("color", "rgb(245,209,144)");
+    }
+})
+</script>

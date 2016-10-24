@@ -1,14 +1,12 @@
 {
-  "name": "ini",
+  "name": "bensue",
   "version": "1.0.0",
   "description": "website",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "ini"
-  ],
+  "keywords": [],
   "author": "wjp",
   "license": "ISC",
   "devDependencies": {
