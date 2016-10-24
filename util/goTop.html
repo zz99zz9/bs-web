@@ -1,0 +1,73 @@
+<style>
+.float_top_menu {
+    width: 60px;
+    position: fixed;
+    right: 0px;
+    bottom: 70px;
+    z-index: 5;
+    height: auto;
+    display: block;
+}
+
+.totop {
+    width: 60px;
+    height: 60px;
+    margin-top: 25px;
+    background: url("img/up.jpg") no-repeat;
+}
+
+.ind-ulflash {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ind-row {
+    display: block;
+    width: 999px;
+    padding-left: 0;
+    margin-top: 0;
+    position: absolute;
+}
+</style>
+<script>
+var arr = new Array();
+arr[0] = "img/breakfast.jpg";
+arr[1] = "img/shower.jpg"; //放图片地址
+arr[2] = "img/movie.png";
+arr[3] = "img/sleep.jpg";
+var num = 0;
+setInterval(turnpic, 4000); //每隔4秒转换图片
+function turnpic() {
+    idsrc = document.getElementById("id1");
+    if (num == arr.length - 1)
+        num = 0;
+    else
+        num += 1;
+    idsrc.src = arr[num];
+}
+window.onscroll = function() {
+    if (document.documentElement.scrollTop + document.body.scrollTop > 400) {
+        document.getElementById("scrollto").style.display = "block";
+    } else {
+        document.getElementById("scrollto").style.display = "none";
+    }
+}
+</script>
+
+<body>
+    <!-- 底部浮动按钮 -->
+    <div class="float_top_menu">
+        <a class="totop" id="scrollto" style="height: 59px; width: 60px; text-decoration: none;" title="返回顶部" href="javascript:scroll(0,0)" hidefocus="true"></a>
+        <div class="ind-ulflash">
+            <ul class="ind-row">
+                <li>
+                    <a href="###" target="_blank">
+                        <img style="width: 60px; height: 60px;" id="id1" src="img/breakfast.jpg" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>

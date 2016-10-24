@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>特许经营-本宿-低投入，高回报</title>
+		<meta name="keywords" content='互本宿酒店、本宿互联网酒店、酒店加盟、酒店合作、特许经营、高投资回报、高入住率、投资回收周期短，投资收益率高，低成本，低人力成本，低物业成本，低推广成本，低管理成本，高收入，高房间溢价，非房收入，互联网运营支持，品牌支持，单店推广支持，店面运营支持，耗材支持，开店支持'>
+		<meta name="description" content='我们将垂直整合酒店产品，分享酒店闲置客房，形成本宿特有的供应体系，让供应商与本宿一起成长。我们为酒店提供特许经营权，酒店享有使用我们品牌的权利。我们为酒店提供全托管服务，依据我们独特的经营理念和方式，确保酒店盈利和加盟商的利益。'>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="js/lib/jquery-1.12.0.min.js"></script>
+		<script src="js/lib/jquery.stellar.min.js"></script>
+		<script src="js/lib/jquery.mousewheel.min.js"></script>
+		<script src="js/lib/jquery.nav.js"></script>
+		<!--<script src="js/lib/jquery.simplr.smoothscroll.min.js" charset="UTF-8"></script>-->
+		<script src="js/lib/smoothscroll.js"></script>
+		<style>
+			h1,
+			h2,
+			h3 {
+				font-weight: lighter;
+			}
+			
+			.float-menu {
+				text-align: center;
+				background: #f0f0f0;
+				/*display: flex;*/
+				list-style: none;
+				display: table;
+				width: 100%;
+				padding: 0;
+			}
+			
+			.float-menu li i {
+				flex: 2 1 auto;
+			}
+			
+			.float-menu li {
+				/*display: inline-block;*/
+				/*flex: 1 0 150px;*/
+				display: table-cell;
+				margin: 0 1px;	
+			}
+			
+			.float-menu li a {
+				line-height: 40px;
+				color: black;
+				font-weight: normal;
+				font-size: 16px;
+				display: inline-block;
+				width: 100%;
+				padding: 5px;
+			}
+			
+			.float-menu li a:hover {
+				/*background: #188bf6;*/
+				background: darkred;
+				color: white;
+			}
+			
+			.tb3 {
+				max-width: 1024px;
+				margin: 0 auto;
+			}
+			
+			.tb3 td {
+				padding: 1em 2em;
+				vertical-align: top;
+			}
+			
+			.tb3 h2,
+			.tb3 h3 {
+				font-weight: normal;
+				margin: 5px;
+			}
+			
+			.tb3 h3 {
+				/*color: #188bf6;*/
+				color: gray;
+			}
+			
+			.tb3 h2 {
+				color: red;
+				text-shadow: 0 0 15px white;
+			}
+			
+			.tb3 p {
+				text-align: justify;
+				font-size: 12px;
+				margin: 0.5em;
+				line-height: 150%;
+			}
+			
+			.tb3 ul {
+				margin-top: 0;
+			}
+			
+			.tb3 li {
+				text-align: justify;
+				font-size: 12px;
+				margin: 0;
+				line-height: 150%;
+			}
+			
+			.invert {
+				background: rgba(255, 255, 255, 0.65);
+				color: black;
+			}
+			
+			hr {
+				width: 80%;
+				border: none;
+				border-top: 1px dotted gray;
+				height: 0;
+			}
+			
+			.ball {
+				width: 250px;
+				height: 250px;
+				border: 1px solid gray;
+				border-radius: 50%;
+				padding: 15px;
+			    display: inline-block;
+			}
+
+			.ball h1,
+			.ball h2 {
+				margin: 0;
+			}
+			
+			.ball p {
+				width: 70%;
+				margin: 0 auto;
+				line-height: 1.4rem;
+				text-align: center;
+			}
+			
+			.ball h1 {
+				color: red;
+			}
+			
+			.ball b {
+				/*color: #188bf6;*/
+				color: red;
+			}
+			
+			.ball-blue {
+				background: black;
+				color: white;
+				border: none;
+				display: inline-flex;
+    			align-items: center;
+			}
+			
+			.input-tab {
+				margin: 0 auto;
+				width: 400px;	
+			}
+			.input-tab td {
+				padding: 0.5em 0;
+			}
+			.input-tab td input,
+			.input-tab td textarea {
+				width: 100%;
+				padding: 5px;
+			}
+			.input-tab td select {
+				height: 29px;
+			}
+			
+			.submit-button {
+				/*background:#188bf6;*/
+				background:black;
+				color: white;
+				padding:0.5em 1em;
+				width: 200px;
+				border: 1px solid black;
+				box-sizing: border-box;
+			}
+			
+			.submit-button:hover {
+				/*font-weight: bold;*/
+				color: black;
+				background: white;
+				/*border: 1px solid black;*/
+			}
+			.float {
+				position: fixed;
+				width: 100%;
+				top: 0;
+			}
+			.current a{
+				background: darkred;
+				color: white !important;	
+			}
+			.error {
+				border: solid 1px red !important;
+			}
+		</style>
+		<script>
+			$(function() {
+				$.stellar({
+					horizontalScrolling: false,
+				});
+				$(window).scroll(function(){
+					//console.log($(window).scrollTop(),$('#float-menu-shell').offsetTop);
+					if($(window).scrollTop()>=555){
+						$('#float-menu').addClass('float');
+					}else
+						$('#float-menu').removeClass('float');
+				})
+				$('#float-menu').onePageNav();
+				//$.srSmoothscroll();
+			});
+		</script>
+	</head>
+
+	<body>
+		<!-- header -->
+
+		<div id="nav0" data-stellar-background-ratio="0.5" data-stellar-vertical-offset="-600" style="background: url('img/pexels-photo.jpg') center;height: 550px;justify-content: center;flex-direction: column;" class="display-flex align-middle">
+			<h1 class="white black-shadow nomargin" style="font-size: 38px;">加入本酒店，意味着领先时代</h1>
+		</div>
+		<div style="height: 50px;width: 100%;" id='float-menu-shell'>
+			<ul class="float-menu nomargin" id='float-menu'>
+				<li><i><a href="#nav0" style="background: none;">&nbsp;</a></i></li>
+				<li><a href="#nav1">未来酒店</a></li>
+				<li><a href="#nav2">投资优势</a></li>
+				<li><a href="#nav3">成本与收益优势</a></li>
+				<li><a href="#nav35">运营支持</a></li>
+				<li><a href="#nav4">加盟条件</a></li>
+				<li><a href="#nav5">立即加盟</a></li>
+				<li><i>&nbsp;</i></li>
+			</ul>	
+		</div>
+		<br id="nav1" />
+		<br />
+		<br />
+		<br />
+		<div style="text-align: center;">
+			<h1 class="nomargin size36">Bensue Hotel 来自未来的互联网酒店</h1>
+			<br />
+			<br />
+			<table class="tb3">
+				<tr>
+					<td valign="top" width="33.3%">
+						<h3>未来市场</h3>
+						<h2>体验消费时代</h2>
+						<br />
+						<p><b>中国将进入消费升级时代</b></p>
+						<p>经济酒店还在拼价格，星级酒店还在拼豪华，为了入住率给渠道商极地的成本价。但是用户却对酒店住宿体验越来越不满意。这些市场信号表明酒店行业将会重新洗牌。而未来将会是体验为王的时代。</p>
+						<p><b>本酒店的核心用户为90后</b></p>
+						<p>90后的消费能力在不断提高，对消费品质有着更高的要求，同时乐于接受新兴事物。本酒店，将核心用户定位为90后，是因为90后将会是酒店市场变革的风向标。</p>
+					</td>
+					<td valign="top">
+						<h3>未来产业</h3>
+						<h2>聚合化</h2>
+						<br />
+						<p><b>聚焦酒店核心体验，聚合社会优质服务</b></p>
+						<p>本酒店聚焦酒店行业最本质的需求：住与浴，身与心。将专业的服务留给专业的人来做，聚合餐厅、会议、健身等优质服务。提升用户体验，又增加酒店收入</p>
+						<p><b>是酒店也是卖场，用户所见即所购</b></p>
+						<p>酒店内的所有用品皆是可以购买的，打通供应商与实际用户的壁垒，将酒店与体验式卖场合二为一。省去中间环节，给用户带来更实惠的价格，同时酒店亦会分享收益。</p>
+					</td>
+					<td valign="top" width="33.3%">
+						<h3>未来生态</h3>
+						<h2>快速迭代，用户参与</h2>
+						<br />
+						<p><b>完善的产品体系。</b></p>
+						<p>互联网产品（微信、网站、移动端）、线下活动、本酒店。三种产品只为了缩短各方互动的路径。让用户与用户、与酒店、与设计师、与耗材供应商之间，更加轻易高效的互动，更及时反馈，及时的改善产品。实现传统行业内的用户体验快速迭代。</p>
+						<p><b>完善的用户闭环生态体系。</b></p>
+						<p>传统行业以客户为主导，互联网行业以用户为主导。本酒店建立起的各方互动体系，目的在于使用户参与进来。让用户设计房间，让用户选择更好的产品，让用户自主传播。实现更多的盈利空间。</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			<br  id='nav2'/>
+			<br />
+			<hr />
+			<br />
+			<br />
+			<br />
+			<br />
+			<h1 class="size36 nomargin">投资优势</h1>
+			<br />
+			<br />
+			<div style="max-width: 1024px;margin: 0 auto;display: flex;justify-content:space-around;">
+				<div class="ball">
+					<br />
+					<br />
+					<h1 class="size36">24<span style="font-size: 18px;color: gray;">个月</span></h1>
+					<br />
+					<hr />
+					<br />
+					<p>投资回收周期</p>
+				</div>
+				<div class="ball">
+					<br />
+					<br />
+					<h1 class="size36">130<span style="font-size: 18px;color: gray;">%</span></h1>
+					<br />
+					<hr />
+					<br />
+					<p>酒店入住率</p>
+				</div>
+				<div class="ball">
+					<br />
+					<br />
+					<h1 class="size36">50<span style="font-size: 18px;color: gray;">%</span></h1>
+					<br />
+					<hr />
+					<br />
+					<p>年投资收益率</p>
+				</div>
+			</div>
+		</div>
+		<br />
+		<br />
+		<br />
+		<br id='nav3' />
+		<br />
+		<br />
+		<div style="background: url('img/bg11.jpg'); background-size: cover;text-align: center;" data-stellar-background-ratio="0.5">
+			<br />
+			<br />
+			<br />
+			<h1 class="nomargin size36 white">成本与盈利优势</h1>
+			<br />
+			<br />
+			<table class="tb3 white">
+				<tr>
+					<td width="25%">
+						<h2>更省人力成本</h2>
+						<p style="text-align: center;">
+							无人入住系统<br />
+							减少前台人员<br />
+							极致聚焦设计<br />
+							减少冗余员工<br />
+							根据订单状况<br />
+							动态调整人员排班
+						</p>
+					</td>
+					<td width="25%" class="invert">
+						<h2>更省物业成本</h2>
+						<p>五星酒店的体验，<br/>快捷酒店的空间，<br/><br/>来自我们开创性的half&half理念。</p>
+					</td>
+					<td width="25%">
+						<h2>更省推广成本</h2>
+						<p style="text-align: center;">用互联网的方法<br />
+						做传统酒店的推广<br />
+						前置运营的策略<br />
+						极大缩短酒店的盈利周期<br />
+						粉丝社区的营造<br />
+						形成品牌的二次传播</p>
+					</td>
+					<td class="invert">
+						<h2>更省管理成本</h2>
+						<p style="text-align: center;">客房入住情况<br />
+						人员排班管理<br />
+						耗材库存管理<br />
+						收支情况报表<br />
+						所见即所得，尽在指尖掌控
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td class="invert">
+						<h2>更高的入住率</h2>
+						<p style="text-align:center">饥渴营销<br />
+						造就了超高的入住率<br /><br />
+						完美的钟点房解决方案<br />
+						极大提高了客房的使用率<br />
+						</p>
+					</td>
+					<td>
+						<h2>更高的房间溢价</h2>
+						<p style="text-align: center;">微奢的品牌定位<br />超越预期的体验<br />丰富的情感附加<br />独特的文化属性造就了<br />更高的房间溢价</p>
+					</td>
+					<td class="invert">
+						<h2>更高的非房收入</h2>
+						<p>每一家本酒店<br />
+						就是一个可以使用体验的“宜家”<br />
+						客房内的所有物品，甚至包含设计用户都可以在线购买</p>
+					</td>
+					<td>
+						<h2>更高的服务收入</h2>
+						<p style="text-align: center;">集成社区增值服务<br />
+						出行、就餐、玩乐、健身<br />
+						为用户带来更多便捷<br />
+						为我们增加额外收益
+						</p>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			<br />
+		</div>
+		<br id='nav35'/>
+		<br />
+		<br />
+		<br />
+		<div style="text-align: center;">
+			<h1 class="nomargin size36">颠覆性的互联网运营支持</h1>
+			<br /><br /><br />
+			<img src="img/5.png" width="946" height="457"/>
+		</div>
+		<br id='nav4'/>
+		<br />
+		<br />
+		<br />
+		<hr />
+		<br />
+		<br />
+		<div style="text-align: center;">
+			<h1 class="size36 nomargin">加盟条件</h1>
+		</div>
+		<br />
+		<br />
+		<div style="max-width: 1024px;margin: 0 auto;display: flex;justify-content:space-around;">
+			<div class="ball ball-blue">
+				<p>认同本酒店的企业文化、充分理解并支持本酒店经营理念，忠实履行特许经营合同。自愿加入本酒店的管理体系，接受本酒店加盟管理模式。</p>
+			</div>
+			<div class="ball ball-blue">
+				<p>大学附近最优，或购物中心、旅游景点、大型游乐中心周边。<br>建筑外观整齐，允许进行改造；周边环境整洁和品牌形象保持一致；交通流动性好，车辆进出便利。</p>
+			</div>
+			<div class="ball ball-blue">
+				<p>水、电、排污设施完备。<br>
+				留有电话、电视及网线接口。北方地区供暖设施到位。<br>拥有或租赁有适合长期（5年以上）经营、可改建为酒店物业的产权或者完全使用权。</p>
+			</div>
+		</div>
+		<br id='nav5'/>
+		<br />
+		<br />
+		<div style="background: gainsboro;text-align: center;" ms-controller="operation">
+			<br />
+			<br />
+			<br />
+			<h1 class="nomargin size36">立即加盟</h1>
+			<br />
+			<table class="input-tab">
+				<tr>
+					<td colspan="2"><input type="text" ms-class="error:isNameError" ms-duplex="name" ms-focus="nameFocus" placeholder="您的姓名"/></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="tel" ms-class="error:isMobileError" ms-duplex="mobile" ms-focus="mobileFocus" placeholder="手机号码"/></td>
+				</tr>
+				<tr>
+					<td align="left" width="50%">
+			    		<select class="form-control form-control-lg" ms-duplex="provinceSelected" style="width: 100%;" ms-class="error:isProvinceError" ms-focus="provinceFocus">
+						  	<option value="">您的省/直辖市/自治区</option>
+                            <option ms-repeat="provinceList" ms-attr-value="el.id">{{el.name}}</option>
+                        </select>
+					</td>
+					<td align="right">
+						<select class="form-control form-control-lg" ms-duplex="citySelected" style="width: 100%;" ms-class="error:isCityError" ms-focus="cityFocus">
+                        	<option value="">您的城市</option>
+                        	<option ms-repeat="cityList" ms-attr-value="el.id">{{el.name}}</option>
+                        </select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2"><input placeholder="详细地址" type="text" ms-class="error:isAddressError" ms-duplex="address" ms-focus="addressFocus"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea placeholder="留言" rows="4" style="resize: vertical;" ms-class="error:isMessageError" ms-duplex="message" ms-focus="messageFocus"></textarea>
+						<br /><br />
+						<button class="submit-button" ms-click="submit">提 交</button>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+		<footer style="text-align: center;font-size: 12px;padding:2em">
+			<img src="img/logo.png" height="64px"/><br />
+			Copyright 2016.<br />Bensue Company.
+			<br/><br/>
+		</footer>
+		<!-- goTop -->
+		<script src="js/lib/avalon.shim.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/util/coperation.js"></script>
+	</body>
+
+</html>

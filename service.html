@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- ex-seo -->
+		<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/live-commenting.css" />
+		<script src="js/lib/jquery-1.12.0.min.js"></script>
+		<script src="js/lib/live-commenting.js"></script>
+		<style>
+			html,body{
+				height: 100%;
+			}
+			h1{
+				font-weight: lighter;
+				font-size: 48px;
+			}
+			.block {
+				width: 128px;
+				height: 128px;
+				display: inline-flex;
+				text-align: center;
+				background: white;
+				font-size: 48px;
+				justify-content: center;
+				vertical-align: middle;
+				opacity: 0.0;
+				margin: 20px 50px;
+				transition: all 1s ease-in-out;
+				border: 1px solid rgba(0,0,0,0.2);
+			}
+			.black {
+				background: black url(img/logo.png) no-repeat center center / 60%;
+				color: white;
+				text-align: center;
+			}
+			/*.black:after {
+				content: 'INI';
+			}*/
+			.active {
+				margin: 0;
+				opacity: 1;
+			}
+		</style>
+		<script>
+			$(window).load(function(){
+				$('.block').addClass('active');
+			})
+		</script>
+	</head>
+	<body>
+
+		<!-- header -->
+
+		<div class="display-flex" style="height: 100%;flex-direction: column;justify-content: center;-webkit-justify-content:center;background: url('img/ba.jpg');background-size: cover;">
+			<div style="margin:0 auto;display: flex;justify-content: center;">
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/lg1.png" width="128"></b>
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/ltv.png"/></b>
+			</div>
+			<div style="margin:0 auto;display: flex;justify-content: center">
+				<b class="block align-middle"><img src="img/lynx.png" ></b>
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/muji.png"/></b>
+				<b class="block black align-middle"></b>
+			</div>
+			<div style="margin:0 auto;display: flex;justify-content: center">
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/luolal.png"/></b>
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/tplink.png"/></b>
+			</div>
+			<div style="margin:0 auto;display: flex;justify-content: center">
+				<b class="block align-middle"><img src="img/loccitane-logo.png"/></b>
+				<b class="block black align-middle"></b>
+				<b class="block align-middle"><img src="img/edaxiang.png"/></b>
+				<b class="block black align-middle"></b>
+			</div>
+		</div>
+		
+		<!-- footer -->
+	</body>
+</html>

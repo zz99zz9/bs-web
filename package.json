@@ -1,0 +1,22 @@
+{
+  "name": "ini",
+  "version": "1.0.0",
+  "description": "website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ini"
+  ],
+  "author": "wjp",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-content-includer": "0.0.7",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-regex-replace": "^0.2.3",
+    "gulp-rename": "^1.2.2"
+  }
+}
