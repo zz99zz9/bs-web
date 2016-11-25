@@ -218,7 +218,25 @@ gulp.task('content', function() {
         process.stdout.write('\x07');
 });
 
-
+//推送
+gulp.task('article', function() {
+    gulp.src('article.html')
+        .pipe(replace({
+            regex:'<!-- header -->',
+            replace:'<!--include "./util/header2.html"-->'
+        }))
+        .pipe(replace({
+            regex:'<!-- goTop -->',
+            replace:'<!--include "./util/goTop.html"-->'
+        }))
+        .pipe(contentIncluder({
+            includerReg:/<!\-\-include\s+"([^"]+)"\-\->/g
+        }))
+        .pipe(rename('article.html'))
+        .pipe(gulp.dest('./dist'))
+        .pipe(connect.reload());
+        process.stdout.write('\x07');
+});
 
 gulp.task('copy', function(){
     gulp.src('favicon.ico').pipe(gulp.dest('./dist/'));
@@ -241,6 +259,6 @@ gulp.task('reload',function(){
 	gulp.src('./dist/*.html').pipe(connect.reload());
 })
 
-gulp.task('all',['experience','additive','hh','index','designer','service','content','cooperation','reload']);
+gulp.task('all',['experience','additive','hh','index','designer','service','content','cooperation','reload','article']);
 
 gulp.task('default',['connect','watch']);
