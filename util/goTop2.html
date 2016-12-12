@@ -43,14 +43,13 @@ function turnpic() {
     idsrc = document.getElementById("id1");
     if (num == (arr.length - 1)) {
         num = 0;
-    }
-    else {
+    } else {
         num += 1;
     }
     idsrc.src = arr[num];
 }
 if (window.location.pathname.indexOf('additive') > -1) {
-        $(document).ready(function() {
+    $(document).ready(function() {
         $('#input-bar').attr('class', 'input-bar input-bar-black');
         $('#fullpage').fullpage({
             anchors: ['firstPage', 'secondPage', '3rdPage'],
@@ -59,11 +58,10 @@ if (window.location.pathname.indexOf('additive') > -1) {
             scrollingSpeed: 1000,
             onLeave: function(leavingSection, leavingSectionIndex, sectionIndex, yMovement) {
                 if (leavingSectionIndex != 1) {
-                document.getElementById("scrollto").style.display = "block";
-            } else {
-                document.getElementById("scrollto").style.display = "none";
-            }
-                console.log(sectionIndex, leavingSectionIndex);
+                    document.getElementById("scrollto").style.display = "block";
+                } else {
+                    document.getElementById("scrollto").style.display = "none";
+                }
                 var bar = $('#input-bar');
                 if (bar.length < 1) {
                     return;
@@ -81,7 +79,6 @@ if (window.location.pathname.indexOf('additive') > -1) {
                 }
             },
             afterLoad: function(anchorLink, index) {
-                console.log(index);
                 switch (index) {
                     case 2:
                         $('#blur').css('transition-duration', '2s')
@@ -93,38 +90,36 @@ if (window.location.pathname.indexOf('additive') > -1) {
     });
 } else {
     $(document).ready(function() {
-    $('#input-bar').attr('class', 'input-bar input-bar-black');
-    $('#fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4Page', '5Page'],
-        sectionsColor: ['black', 'white', 'black', 'white', 'black'],
-        css3: true,
-        onLeave: function(leavingSection, leavingSectionIndex, sectionIndex, yMovement) {
-            if (leavingSectionIndex != 1) {
-                document.getElementById("scrollto").style.display = "block";
-            } else {
-                document.getElementById("scrollto").style.display = "none";
+        $('#input-bar').attr('class', 'input-bar input-bar-black');
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4Page', '5Page'],
+            sectionsColor: ['black', 'white', 'black', 'white', 'white'],
+            css3: true,
+            onLeave: function(leavingSection, leavingSectionIndex, sectionIndex, yMovement) {
+                if (leavingSectionIndex != 1) {
+                    document.getElementById("scrollto").style.display = "block";
+                } else {
+                    document.getElementById("scrollto").style.display = "none";
+                }
+                var bar = $('#input-bar');
+                if (bar.length < 1) {
+                    return;
+                }
+                switch (leavingSectionIndex) {
+                    case 1:
+                    case 3:
+                        bar.attr('class', 'input-bar input-bar-black');
+                        break;
+                    case 2:
+                    case 4:
+                    case 5:
+                        bar.attr('class', 'input-bar input-bar-white');
+                        break;
+                }
             }
-            console.log(sectionIndex, leavingSectionIndex);
-            var bar = $('#input-bar');
-            if (bar.length < 1) {
-                return;
-            }
-            switch (leavingSectionIndex) {
-                case 1:
-                case 3:
-                    bar.attr('class', 'input-bar input-bar-black');
-                    break;
-                case 2:
-                case 4:
-                case 5:
-                    bar.attr('class', 'input-bar input-bar-white');
-                    break;
-            }
-        }
+        });
     });
-});
 }
-
 </script>
 
 <body>
