@@ -45,13 +45,8 @@ $(function() {
         return "";
     }
     var id = getParam("id");
-    if (id==1) {
-        $("#pic").attr("src", "img/push1.png");
-    } else if (id==2) {
-        $("#pic").attr("src", "img/push2.png");
-    } else if(id==3) {
-        $("#pic").attr("src", "img/push3.png");
-    }
+
+    $("#pic").attr("src", "img/push"+ id +".png");
 })
 </script>
 
