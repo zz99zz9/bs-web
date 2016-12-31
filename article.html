@@ -46,7 +46,9 @@ $(function() {
     }
     var id = getParam("id");
 
-    $("#pic").attr("src", "img/push"+ id +".png");
+    $("#pic").attr("src", "img/push" + id + ".png");
+    //优先使用png格式，如果没有再使用jpg
+    $("#pic").attr("onerror", "javascript:this.src='img/push"+ id +".jpg'");
 })
 </script>
 
