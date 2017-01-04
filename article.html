@@ -26,30 +26,14 @@
 </head>
 
 <body>
-    <div style="text-align: center;">
-        <img id="pic" src="" style="width: 100%; max-width: 600px;">
+    <div style="text-align: center;" ms-controller="article">
+        <img ms-attr-src="src" style="width: 100%; max-width: 600px;">
     </div>
     <!-- footer -->
     <!-- goTop -->
     <script src="js/lib/avalon.shim.js"></script>
-    <script src="js/util/contact.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/pages/article.js"></script>
 </body>
-<script>
-$(function() {
-    function getParam(paramName) {
-        var paramList = location.search.replace("?", "").split("&");
-        for (var i = 0; i < paramList.length; i++) {
-            if (paramList[i].split("=")[0] == paramName)
-                return decodeURI(paramList[i].substring(paramList[i].indexOf("=") + 1, paramList[i].length));
-        }
-        return "";
-    }
-    var id = getParam("id");
-
-    $("#pic").attr("src", "img/push" + id + ".png");
-    //优先使用png格式，如果没有再使用jpg
-    $("#pic").attr("onerror", "javascript:this.src='img/push"+ id +".jpg'");
-})
-</script>
 
 </html>
